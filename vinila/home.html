@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <Script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        >
+        </Script>
+        <link rel="stylesheet" href="home.css"  type="text/css">
+        <div class="title">
+            <button onclick="menu()" class="Mbutton">Menu</button>
+            <div class="Telement">Service Thing</div>
+            <div class="Telement">LogIn/SignUp</div>
+        </div>
+    </header>
+    <body>
+        <div class="body">
+            <div id="menu" class="menu">
+                <div style="text-align: center;">MENU</div>
+                <div style="text-decoration: underline">Job Type</div>
+                <div className="subB">
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
+                    <label for="vehicle1"> Carpentry</label><br/>
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car"/>
+                    <label for="vehicle2"> Plumbing</label><br/>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
+                    <label for="vehicle3"> stone working</label><br/>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
+                    <label for="vehicle3"> IT</label><br/>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
+                    <label for="vehicle3"> Other</label><br/>
+                </div>
+                <div style="text-decoration: underline">Date Rang</div>
+                <div className="subB">
+                    <input type="text" style="width: 50px;"></input> 
+                    to
+                    <input type="text" style="width: 50px;"></input>
+                </div>
+                <div style="text-decoration: underline">Distance</div>
+                <div className="subB">
+                    <input type="radio" name="test" id="5mile" value="5mile"/>
+                    <label for="5mile">5</label><br/>
+                    <input type="radio"name="test" id="10mile" value="10mile"/>
+                    <label for="10mile">10</label><br/>
+                    <input type="radio" name="test" id="15mile" value="15mile"/>
+                    <label for="15mile">15</label><br/>
+                    <input type="radio" name="test" id="20mile" value="20mile"/>
+                    <label for="20mile">20</label><br/>
+                    <input type="radio" name="test" id="25mile" value="25mile"/>
+                    <label for="25mile">25</label><br/>
+                    <input type="radio" name="test" id="30mile" value="30mile"/>
+                    <label for="30mile">30</label><br/>
+                    <input type="radio" name="test" id="40mile" value="40mile"/>
+                    <label for="40mile">40</label><br/>
+                    <input type="radio" name="test" id="50mile" value="50mile"/>
+                    <label for="50mile">50</label>
+                </div>
+            </div>
+            <div id="body" style="display: flex; flex-wrap: wrap;">
+               
+                <script>
+                    var men = 0;
+                    function test(){
+                        console.log("hmmmm");
+                    };
+
+                    function menu(){
+                        if(men === 0){
+                            document.getElementById("menu").style.display="inline"
+                            ++men;
+                        }
+                        else{
+                            document.getElementById("menu").style.display="none"
+                            men=0;
+                        }
+
+                    }
+                    
+                    function loadJobs(){
+                        for(var i = 0; i <30; ++i){
+                            document.getElementById("body").innerHTML+="<div onclick=\"test()\" class=\"jobBox\">"+
+                                "<div  class=\"jobT\">Job title</div>"+
+                                "<div class=\"jobD\">Job Type</div>"+
+                                "<div  class=\"jobD\">Date Of Job</div>"+
+                                "<img src=\"img_girl.jpg\" alt=\"Girl in a jacket\" width=\"125\" height=\"150\"></img></div>"
+                            console.log("yooo")
+                        }
+                        console.log(window.innerHeight, window.innerWidth )
+                        // if user is on a moble device make sizes diffrent
+                        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                            console.log("MOBLE!!!!!!!!!" )
+                        }
+                    }
+
+                    window.onLoad=loadJobs();
+                    
+                </script>  
+            </div>
+        </div>    
+    </body>
+    <footer>
+    </footer>
+</html>
