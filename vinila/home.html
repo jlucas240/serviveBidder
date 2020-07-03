@@ -7,70 +7,204 @@
         </Script>
         <link rel="stylesheet" href="home.css"  type="text/css">
         <div class="title">
-            <button onclick="menu()" class="Mbutton">Menu</button>
+            <button onclick="menu()" class="Mbutton" style="margin-left:10px;">Menu</button>
             <div class="Telement">Service Thing</div>
-            <div class="Telement">LogIn/SignUp</div>
+            <div id="login" class="Telement" style="margin-right:10px;" onclick="logSign()" onmousemove="hover()" onmouseout="hoverNot()">LogIn/SignUp</div>
         </div>
     </header>
     <body>
         <div class="body">
             <div id="menu" class="menu">
                 <div style="text-align: center;">MENU</div>
-                <div style="text-decoration: underline">Job Type</div>
-                <div className="subB">
-                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-                    <label for="vehicle1"> Carpentry</label><br/>
-                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car"/>
-                    <label for="vehicle2"> Plumbing</label><br/>
-                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                    <label for="vehicle3"> stone working</label><br/>
-                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                    <label for="vehicle3"> IT</label><br/>
-                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                    <label for="vehicle3"> Other</label><br/>
+                <div class="menuST">Job Type</div>
+                <div class="menuC">
+                    <input type="checkbox" id="type1" name="type" value="Carpentry"/>
+                    <label for="type1"> Carpentry</label><br/>
+                    <input type="checkbox" id="type2" name="type" value="Plumbing"/>
+                    <label for="type2"> Plumbing</label><br/>
+                    <input type="checkbox" id="type3" name="type" value="Masondry"/>
+                    <label for="type3"> Masondry</label><br/>
+                    <input type="checkbox" id="type4" name="type" value="IT"/>
+                    <label for="type4"> IT</label><br/>
+                    <input type="checkbox" id="type5" name="type" value="Other"/>
+                    <label for="type5"> Other</label><br/>
                 </div>
-                <div style="text-decoration: underline">Date Rang</div>
-                <div className="subB">
-                    <input type="text" style="width: 50px;"></input> 
-                    to
-                    <input type="text" style="width: 50px;"></input>
+                <div class="menuST">Date Rang</div>
+                <div class="menuC">
+                    <input type="date" style="width: 125px;" name="date"></input><br> 
+                    to <br>
+                    <input type="date" style="width: 125px;" name="date"></input>
                 </div>
-                <div style="text-decoration: underline">Distance</div>
-                <div className="subB">
-                    <input type="radio" name="test" id="5mile" value="5mile"/>
+                <div class="menuST">Distance</div>
+                <div class="menuC">
+                    <input type="radio" name="dist" id="5mile" value="5"/>
                     <label for="5mile">5</label><br/>
-                    <input type="radio"name="test" id="10mile" value="10mile"/>
+                    <input type="radio"name="dist" id="10mile" value="10"/>
                     <label for="10mile">10</label><br/>
-                    <input type="radio" name="test" id="15mile" value="15mile"/>
+                    <input type="radio" name="dist" id="15mile" value="15"/>
                     <label for="15mile">15</label><br/>
-                    <input type="radio" name="test" id="20mile" value="20mile"/>
+                    <input type="radio" name="dist" id="20mile" value="20" checked="true"/>
                     <label for="20mile">20</label><br/>
-                    <input type="radio" name="test" id="25mile" value="25mile"/>
+                    <input type="radio" name="dist" id="25mile" value="25"/>
                     <label for="25mile">25</label><br/>
-                    <input type="radio" name="test" id="30mile" value="30mile"/>
+                    <input type="radio" name="dist" id="30mile" value="30"/>
                     <label for="30mile">30</label><br/>
-                    <input type="radio" name="test" id="40mile" value="40mile"/>
+                    <input type="radio" name="dist" id="40mile" value="40"/>
                     <label for="40mile">40</label><br/>
-                    <input type="radio" name="test" id="50mile" value="50mile"/>
+                    <input type="radio" name="dist" id="50mile" value="50"/>
                     <label for="50mile">50</label>
                 </div>
+                <button onclick="search()" style=" position: absolute; left: 50%;
+                transform: translate(-50%, 0%);">search</button>
+            </div>
+            <div class="cert" id="certify" >
+                <div style="display: flex; justify-content:space-around;
+                border-bottom: 2px solid mediumseagreen; padding-bottom: 5px;
+                ">
+                    <div onclick="login()">Log In</div>
+                    <div onclick="signup()">Sign Up</div>
+                </div>
+                <div id="error" style="color: red;">
+
+                </div>
+                <div id="LogIn" class="login">
+                    <label class="certEL" for="usernameL">Username:</label><br/>
+                    <input class="certET" type="text" name="certifyL" id="usernameL"/><br/>
+                    <label class="certEL" for="passwordL">Password:</label><br/>
+                    <input class="certET" type="password" name="certifyL" id="passwordL"/><br/>
+                    <button class="certET" style="margin-left: 25px;" onclick="logIn()"> Sign In</button>
+                </div>
+                <div id="SignUp" class="signup">
+                    <label class="certEL" for="firstName">First Name:</label><br/>
+                    <input class="certET" type="text" name="certifyS" id="firstName"/><br/>
+                    <label class="certEL" for="lastName">Last Name:</label><br/>
+                    <input class="certET" type="text" name="certifyS" id="lastName"/><br/>
+                    <label class="certEL" for="streetAddress">Street Address:</label><br/>
+                    <input class="certET" type="text" name="certifyS" id="streetAddress"/><br/>
+                    <label class="certEL" for="city">City:</label><br/>
+                    <input class="certET" type="" name="certifyS" id="city"/><br/>
+                    <label class="certEL" for="state">State:</label><br/>
+                    <input class="certET" type="text" name="certifyS" id="state"/><br/>
+                    <label class="certEL" for="usernameS">Username:</label><br/>
+                    <input class="certET" type="text" name="certifyS" id="usernameS"/><br/>
+                    <label class="certEL" for="email">E-mail:</label><br/>
+                    <input class="certET" type="text" name="certifyS" id="email"/><br/>
+                    <label class="certEL" for="email1">Confirm E-mail:</label><br/>
+                    <input class="certET" type="text" name="certifyS" id="email1"/><br/>
+                    <label class="certEL" for="passwordS">Password:</label><br/>
+                    <input class="certET" type="password" name="certifyS" id="passwordS"/><br/>
+                    <label class="certEL" for="passwordS1">Confirm Password:</label><br/>
+                    <input class="certET" type="password" name="certifyS" id="passwordS1"/><br/>
+                    <button class="certET" style="margin-left: 25px;" onclick="signUp()">Submit</button>
+                </div>
+                <div id="SignUp"></div>
             </div>
             <div id="body" style="display: flex; flex-wrap: wrap;">
                
                 <script>
-                    var men = 0;
+                    var men = false;
+                    var logSignUp = false;
                     function test(){
                         console.log("hmmmm");
                     };
 
+                    function search(){
+                        var dist = document.getElementsByName("dist");
+                        var ty = document.getElementsByName("type");
+                        var dat = document.getElementsByName("date");
+                        var distance = 20;
+                        var type = [];
+                        var logSignUp = false;
+                        for(i=0; i<dist.length; ++i){
+                            if(dist[i].checked){ 
+                                distance = parseInt(dist[i].value)
+                            }
+                        }
+                        for(i=0; i<ty.length; ++i){
+                            if(ty[i].checked){
+                                type.push(ty[i].value);
+                            }
+                        }
+                        //maybe make sure dates are corect
+
+                    }
+
+                    function hover(){
+                        document.getElementById("login").style.color="blue";
+                    }
+                     function hoverNot(){
+                        document.getElementById("login").style.color="black";
+                     }
+
+                    function logSign(){
+                        if(logSignUp){
+                            document.getElementById("certify").style.display="none"
+                            logSignUp=false;
+                        } else{
+                            document.getElementById("certify").style.display="inline"
+                            logSignUp=true;
+                        }
+                    }
+
+                    function login(){
+                        document.getElementById("LogIn").style.display="inline"
+                        document.getElementById("SignUp").style.display="none"
+                        document.getElementById("error").innerHTML=""
+                    }
+
+                    function signup(){
+                        document.getElementById("LogIn").style.display="none"
+                        document.getElementById("SignUp").style.display="inline"
+                        document.getElementById("error").innerHTML=""
+                    }
+                    
+                    function logIn(){
+                        var errorMessage = ""
+                        if(document.getElementById("usernameL").value == ""){
+                            errorMessage += "<br/>* must enter Username"
+                        }
+                        if(document.getElementById("passwordL").value == ""){
+                            errorMessage += "<br/>* must enter Password"
+                        }
+                        if(errorMessage != ""){
+                            document.getElementById("error").innerHTML=errorMessage
+                            return
+                        }
+
+                        console.log("works")
+                    }
+
+                    function signUp(){
+                        var cert = document.getElementsByName("certifyS");
+                        var errorMessage = ""
+
+                        for(i=0; i < cert.length; ++i){
+                            if(cert[i].value == ""){
+                                errorMessage += "<br/>* " + cert[i].id +" can not be left empty" 
+                            }
+                        }
+                        if(document.getElementById("passwordS").value != document.getElementById("passwordS1").value && document.getElementById("passwordS").value != "" && document.getElementById("passwordS1").value != ""){
+                            errorMessage += "<br/>* passwords do not match" 
+                        }
+                        if(document.getElementById("email").value != document.getElementById("email1").value && document.getElementById("email").value != "" && document.getElementById("email1").value != ""){
+                            errorMessage += "<br/>* email adresses do not match"
+                        }
+
+                        if(errorMessage != ""){
+                            document.getElementById("error").innerHTML=errorMessage
+                            return
+                        }
+                    }
+
+
                     function menu(){
-                        if(men === 0){
+                        if(!men){
                             document.getElementById("menu").style.display="inline"
-                            ++men;
+                            men=true;
                         }
                         else{
                             document.getElementById("menu").style.display="none"
-                            men=0;
+                            men=false;
                         }
 
                     }

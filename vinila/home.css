@@ -35,7 +35,49 @@
     margin-top: 5px; 
     padding: 5px; 
     width: 150px;
+    height: 425px;
 
+}
+
+.menuST{
+    text-decoration: underline;
+
+}
+
+.menuC{
+    margin-left: 10px;
+}
+
+.cert{
+    display: none;
+    position: absolute; 
+    right: 0px; 
+    background-color: white; 
+    z-index: 4;
+    border-style: solid; 
+    border-color: mediumseagreen; 
+    border-radius: 25px; 
+    border-width: 2px; 
+    margin: 5px; 
+    padding: 5px; 
+    width: 250px;
+}
+
+.login{
+    display: inline;
+}
+
+.signup{
+    display: none;
+}
+
+.certEL {
+    color: rgb(56, 54, 54);
+    margin-left: 25px;
+}
+.certET {
+    margin-bottom: 5px;
+    margin-left: 25px;
 }
 
 .jobBox{
@@ -44,7 +86,7 @@
     border-radius: 25px;
     width: 125px;
     margin: 5px;
-    height: 250px;
+    height: 225px;
 }
 
 .jobT{
